@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eric Liu — Executive Curriculum Vitae</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --primary: #0f172a;       /* Slate 900 */
+  --primary-light: #1e293b; /* Slate 800 */
+  --accent: #1e3a8a;        /* Executive Deep Navy */
+  --accent-light: #f8fafc;  /* Slate 50 */
+  --accent-border: #cbd5e1; /* Slate 300 */
+  --teal: #0f766e;          /* Deep Teal 700 */
+  --text-main: #1e293b;     /* Slate 800 */
+  --text-muted: #475569;    /* Slate 600 */
+  --text-light: #64748b;    /* Slate 500 */
+  --bg-subtle: #f8fafc;     /* Slate 50 */
+  --border-subtle: #e2e8f0; /* Slate 200 */
+  --border-strong: #cbd5e1; /* Slate 300 */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 8.15pt;
+  line-height: 1.38;
+  color: var(--text-main);
+  background: #ffffff;
+  width: 210mm;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+a:hover {
+  color: #1d4ed8;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 6mm 10mm;
+}
+
+@media print {
+  body {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+  }
+  .page-container {
+    padding: 0 !important;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page-container:last-child {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  .no-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+
+.page-container {
+  width: 100%;
+  min-height: 284mm;
+  padding: 6mm 10mm;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== HEADER ==================== */
+.header-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--primary);
+  margin-bottom: 6px;
+}
+
+.header-info {
+  flex: 1;
+}
+
+.name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.candidate-name {
+  font-size: 19pt;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.2px;
+}
+
+.candidate-title {
+  font-size: 9.2pt;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: 1px;
+}
+
+.contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
+  font-size: 7.8pt;
+  color: var(--text-muted);
+}
+
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==================== SECTION TITLE ==================== */
+.section-title {
+  font-size: 8.6pt;
+  font-weight: 800;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  border-bottom: 1.2px solid var(--primary);
+  padding-bottom: 2px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* ==================== SUMMARY BOX ==================== */
+.summary-box {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--accent);
+  border-radius: 3px;
+  padding: 5px 8px;
+  margin-bottom: 6px;
+}
+
+.summary-list {
+  padding-left: 14px;
+  margin: 0;
+}
+
+.summary-list li {
+  font-size: 7.9pt;
+  line-height: 1.36;
+  color: var(--text-main);
+  margin-bottom: 2.5px;
+}
+.summary-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* ==================== SKILLS GRID ==================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 8px;
+  margin-bottom: 6px;
+}
+
+.skill-category-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: 3px;
+  padding: 4px 6px;
+}
+
+.skill-cat-title {
+  font-size: 7.8pt;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.skill-cat-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.skill-tag {
+  font-size: 7.2pt;
+  color: var(--text-main);
+  background: #ffffff;
+  padding: 1px 4px;
+  border-radius: 2px;
+  border: 1px solid var(--border-subtle);
+}
+
+/* ==================== EXPERIENCE ITEMS ==================== */
+.job-item {
+  margin-bottom: 6px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.job-item:last-child {
+  margin-bottom: 0;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1px;
+}
+
+.job-company {
+  font-size: 9.0pt;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.job-period {
+  font-size: 7.8pt;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.job-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+}
+
+.job-title {
+  font-size: 8.3pt;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.job-location {
+  font-size: 7.5pt;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.job-bullets {
+  list-style: none;
+  padding-left: 0;
+}
+
+.job-bullets li {
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 1.8px;
+  font-size: 7.85pt;
+  line-height: 1.36;
+  color: var(--text-main);
+}
+
+.job-bullets li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 8pt;
+  top: 0px;
+}
+
+/* ==================== PROJECTS GRID ==================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 6px;
+  margin-bottom: 6px;
+}
+
+.project-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: 3px;
+  padding: 4px 6px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.proj-title {
+  font-size: 7.9pt;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.proj-role {
+  font-size: 7.0pt;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.proj-tech {
+  font-size: 6.9pt;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent);
+  margin-top: 1px;
+  margin-bottom: 1.5px;
+}
+
+.proj-desc {
+  font-size: 7.3pt;
+  color: var(--text-muted);
+  line-height: 1.32;
+}
+
+/* ==================== CERTIFICATIONS & EDUCATION ==================== */
+.two-col-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.cert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+}
+
+.cert-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-left: 2.5px solid var(--teal);
+  border-radius: 2px;
+  padding: 2.5px 5px;
+  font-size: 7.3pt;
+}
+
+.cert-name {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.cert-issuer {
+  font-size: 6.9pt;
+  color: var(--text-muted);
+}
+
+.edu-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-left: 2.5px solid var(--accent);
+  border-radius: 2px;
+  padding: 4px 6px;
+}
+
+.edu-school {
+  font-size: 8.0pt;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.edu-degree {
+  font-size: 7.5pt;
+  color: var(--accent);
+  margin-top: 0.5px;
+}
+
+.edu-meta {
+  font-size: 7.0pt;
+  color: var(--text-muted);
+  margin-top: 0.5px;
+}
+
+/* ==================== PAGE 2 MINI HEADER ==================== */
+.p2-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid var(--border-strong);
+  margin-bottom: 6px;
+  font-size: 7.6pt;
+  color: var(--text-muted);
+}
+
+.p2-header-name {
+  font-size: 8.6pt;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* FOOTER */
+.page-footer {
+  margin-top: auto;
+  padding-top: 3px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  font-size: 6.8pt;
+  color: var(--text-light);
+}
+</style>
+</head>
+<body>
+
+<!-- ==========================================
+     PAGE 1: Profile, Summary, Core Skills, Experience Part 1
+========================================== -->
+<div class="page-container">
+  
+  <!-- HEADER -->
+  <div class="header-card">
+    <div class="header-info">
+      <div class="name-row">
+        <span class="candidate-name">Eric Liu</span>
+      </div>
+      <div class="candidate-title">Technical Project Consultant &amp; Solutions Architect (Fractional Systems Director)</div>
+      
+      <div class="contact-bar">
+        <span class="contact-item">📍 Taipei, Taiwan ⇄ Ho Chi Minh City, Vietnam (Global Remote / Async)</span>
+        <span class="contact-item">📧 jiacyu@gmail.com</span>
+        <span class="contact-item">📱 +886-916-100-757</span>
+        <span class="contact-item">🌐 <a href="https://jcbluenose131.github.io/institutional-decision-models/" target="_blank">Decision Systems Portfolio ↗</a></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section-title">Executive Summary</div>
+  <div class="summary-box">
+    <ol class="summary-list">
+      
+      <li><strong>Enterprise Systems Architecture & Integration:</strong> 12+ years bridging cutting-edge digital infrastructure with complex commercial operations. Proven track record architecting multi-module business systems, localized IoT automation networks, and zero-cloud interactive decision applications.</li>
+      
+      <li><strong>Zero-Cloud Client-Side Web Applications:</strong> Pioneer in developing high-density, client-side single-page applications (SPAs) that process complex mathematical sensitivity models purely in the browser—guaranteeing 100% data confidentiality for enterprise and private equity clients.</li>
+      
+      <li><strong>Cross-Border Systems Deployment:</strong> Established IT, supply chain, and e-commerce infrastructure across Taiwan and Vietnam, including foreign entity incorporation, Ministry of National Defense compliance, and 15,000 MAU regional fulfillment systems.</li>
+      
+      <li><strong>Database Performance & Pipeline Engineering:</strong> Hands-on expertise in SQL database schema design, query optimization (achieved 60% latency reductions in production manufacturing ERPs), Python microservices, and automated cron pipelines.</li>
+      
+      <li><strong>Authoritative Industry Standing:</strong> Featured by Taiwan's leading financial daily, 經濟日報 (Economic Daily News), for smart building and IoT systems integration. B.B.A. in Finance with 5 professional financial licenses.</li>
+      
+    </ol>
+  </div>
+
+  <!-- CORE SKILLS -->
+  <div class="section-title">Core Competencies &amp; Technical Capabilities</div>
+  <div class="skills-grid">
+    
+    <div class="skill-category-card">
+      <div class="skill-cat-title">Enterprise Architecture &amp; Web Systems</div>
+      <div class="skill-tags">
+        
+        <span class="skill-tag">Zero-Cloud SPA Architecture</span>
+        
+        <span class="skill-tag">Client-Side Reactive Engines</span>
+        
+        <span class="skill-tag">Chart.js &amp; Data Canvas</span>
+        
+        <span class="skill-tag">FastMCP &amp; Microservices</span>
+        
+        <span class="skill-tag">RESTful API Integration</span>
+        
+        <span class="skill-tag">Cross-Platform Deployment</span>
+        
+      </div>
+    </div>
+    
+    <div class="skill-category-card">
+      <div class="skill-cat-title">Data Infrastructure &amp; Performance</div>
+      <div class="skill-tags">
+        
+        <span class="skill-tag">SQL Schema Design &amp; Optimization (-60%)</span>
+        
+        <span class="skill-tag">Python Automated Pipelines</span>
+        
+        <span class="skill-tag">Linux / WSL2 Environments</span>
+        
+        <span class="skill-tag">Git Version Control &amp; CI/CD</span>
+        
+        <span class="skill-tag">Tableau Data Visualization</span>
+        
+        <span class="skill-tag">Time-Series Data Extraction</span>
+        
+      </div>
+    </div>
+    
+    <div class="skill-category-card">
+      <div class="skill-cat-title">IoT &amp; Hardware Systems Integration</div>
+      <div class="skill-tags">
+        
+        <span class="skill-tag">Building Automation (Fibaro/Wulian)</span>
+        
+        <span class="skill-tag">HPE &amp; Aruba Enterprise Networking</span>
+        
+        <span class="skill-tag">Modbus / Z-Wave Protocols</span>
+        
+        <span class="skill-tag">B2B Engineering Certification</span>
+        
+        <span class="skill-tag">Hardware-Software Bridging</span>
+        
+        <span class="skill-tag">Smart Building Specing</span>
+        
+      </div>
+    </div>
+    
+    <div class="skill-category-card">
+      <div class="skill-cat-title">Commercial Governance &amp; Delivery</div>
+      <div class="skill-tags">
+        
+        <span class="skill-tag">Economic Daily News Feature</span>
+        
+        <span class="skill-tag">Cross-Border Entity Setup</span>
+        
+        <span class="skill-tag">Statutory Compliance (Decree 09)</span>
+        
+        <span class="skill-tag">Async Technical Documentation</span>
+        
+        <span class="skill-tag">Vendor Contract Negotiation</span>
+        
+        <span class="skill-tag">Bilingual English / Mandarin</span>
+        
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- EXPERIENCE PART 1 -->
+  <div class="section-title">Professional Experience (Part 1: Executive Leadership)</div>
+  
+  
+  <div class="job-item">
+    <div class="job-header">
+      <span class="job-company">Free Link System / Wake N&#39; Bake</span>
+      <span class="job-period">2015 - 2020</span>
+    </div>
+    <div class="job-sub">
+      <span class="job-title">Founder &amp; Managing Director</span>
+      <span class="job-location">Taipei, Taiwan</span>
+    </div>
+    <ul class="job-bullets">
+      
+      <li>Founded premier smart building IoT integration firm. <a href="http://www.taiseia.org.tw/Industry/industry_more?id=67" target="_blank" style="color:#1e3a8a; font-weight:600;">Featured in 經濟日報 (Economic Daily News) ↗</a> for landmark channel and engineering innovations.</li>
+      
+      <li>Secured master distribution rights for Fibaro (Poland) and Wulian (China); distributed HP Enterprise/Aruba networking hardware to enterprise clients and retail chains.</li>
+      
+      <li>Formulated and implemented standardized engineering specifications for Tier-1 real estate developers, architectural firms, and certified electrical contractors.</li>
+      
+      <li>Designed and maintained proprietary ERP and inventory relational database schema, connecting hardware procurement, warranty management, and customer CRM modules.</li>
+      
+      <li>Founded and operated Wake N' Bake hospitality establishment, developing automated POS and margin reporting workflows prior to a successful equity buyout.</li>
+      
+    </ul>
+  </div>
+  
+  <div class="job-item">
+    <div class="job-header">
+      <span class="job-company">Locus Automation JSC / Tech-Link Silicones Vietnam</span>
+      <span class="job-period">2019 - 2021</span>
+    </div>
+    <div class="job-sub">
+      <span class="job-title">General Manager &amp; Group Systems Director</span>
+      <span class="job-location">Ho Chi Minh City, Vietnam</span>
+    </div>
+    <ul class="job-bullets">
+      
+      <li>Directed technology solutions and commercial systems for a subsidiary of a 1,300-headcount manufacturing group with 9 factories across China and Vietnam.</li>
+      
+      <li>Supervised a 34-person engineering and business development team, restructuring production reporting pipelines to achieve net profitability in 6 months.</li>
+      
+      <li>Overhauled factory inventory and SQL query architecture, accelerating multi-plant daily ERP reporting from 45 minutes to 18 minutes (60% latency reduction).</li>
+      
+      <li>Delivered enterprise smart conference and automation systems to dozens of prominent Taiwanese industrial plants and top-tier Vietnamese corporations (Bitis, Minh Long).</li>
+      
+    </ul>
+  </div>
+  
+
+  <div class="page-footer">
+    <span>Eric Liu | Executive Curriculum Vitae</span>
+    <span>Page 1 of 2</span>
+  </div>
+</div>
+
+<!-- ==========================================
+     PAGE 2: Experience Part 2, Systems & Models, Education, Certifications
+========================================== -->
+<div class="page-container page-break">
+
+  <!-- MINI HEADER -->
+  <div class="p2-header-bar">
+    <span class="p2-header-name">Eric Liu | Key Systems &amp; Career History</span>
+    <span>jiacyu@gmail.com | +886-916-100-757 | <a href="https://jcbluenose131.github.io/institutional-decision-models/" target="_blank">Portfolio Demo ↗</a></span>
+  </div>
+
+  <!-- EXPERIENCE PART 2 -->
+  <div class="section-title">Professional Experience (Part 2: Commercial Distribution &amp; Banking)</div>
+  
+  
+  <div class="job-item">
+    <div class="job-header">
+      <span class="job-company">CEREALOUTFIT CO., LTD</span>
+      <span class="job-period">2020 - 2024</span>
+    </div>
+    <div class="job-sub">
+      <span class="job-title">Director of Technology &amp; Operations</span>
+      <span class="job-location">Taipei, Taiwan ⇄ Ho Chi Minh City, Vietnam</span>
+    </div>
+    <ul class="job-bullets">
+      
+      <li>Architected omni-channel e-commerce systems, database schemas, and digital marketing tracking infrastructure supporting NT$ 52M annual turnover and 164,000 social fans.</li>
+      
+      <li>Led Vietnam technical market entry, securing Ministry of National Defense electronic commerce security permits and deploying compliant local server and payment gateways.</li>
+      
+      <li>Engineered automated inventory replenishment and financial health analytics pipelines in Python and SQL, maintaining zero downtime across regional peak sales.</li>
+      
+      <li>Spearheaded technical vendor evaluations and cloud cost optimization initiatives, reducing monthly infrastructure expenditure while supporting 15,000 monthly active users.</li>
+      
+    </ul>
+  </div>
+  
+  <div class="job-item">
+    <div class="job-header">
+      <span class="job-company">Citi Bank NA &amp; Bank SinoPac</span>
+      <span class="job-period">2011 - 2015</span>
+    </div>
+    <div class="job-sub">
+      <span class="job-title">Assistant Vice President / Junior Manager — Wealth Management &amp; SME Banking</span>
+      <span class="job-location">Taipei, Taiwan</span>
+    </div>
+    <ul class="job-bullets">
+      
+      <li>Managed CitiGold wealth management portfolios and structured SME credit facilities, developing analytical cash flow models for corporate clients.</li>
+      
+      <li>Conducted rigorous financial risk evaluations and statutory compliance audits for cross-border commercial borrowers.</li>
+      
+      <li>Maintained spotless audit records and repeatedly ranked in top quarterly performance tiers, establishing deep grounding in financial engineering and corporate governance.</li>
+      
+    </ul>
+  </div>
+  
+
+  <!-- FLAGSHIP PROJECTS -->
+  <div class="section-title">Flagship Quantitative &amp; Enterprise Decision Systems</div>
+  <div class="projects-grid">
+    
+    <div class="project-card">
+      <div class="proj-title">
+        <span>Zero-Cloud Institutional Decision Applications</span>
+        <span class="proj-role">Principal Systems Architect</span>
+      </div>
+      <div class="proj-tech">JavaScript, Tailwind, Chart.js, Reactive State Machine</div>
+      <div class="proj-desc">Architected suite of institutional decision applications that execute complex financial models purely client-side with zero external cloud dependencies or data exposure risks. (<strong>Impact:</strong> Delivered C-suite grade modeling tools with instantaneous reactive sliders and mathematical transparency.)</div>
+    </div>
+    
+    <div class="project-card">
+      <div class="proj-title">
+        <span>Greater Taipei Pet Hospitality Feasibility System</span>
+        <span class="proj-role">Lead Solutions Architect</span>
+      </div>
+      <div class="proj-tech">SPA Architecture, 34 Operational Tables, 12 Sliders, Chart.js</div>
+      <div class="proj-desc">Built full-stack single-page application with 34 dense tables, acoustic damping calculations, and dynamic P&L simulation for a NT$ 25M commercial investment project. (<strong>Impact:</strong> Provided private equity sponsors with interactive scenario stress-testing across revenue, capex, and payback.)</div>
+    </div>
+    
+    <div class="project-card">
+      <div class="proj-title">
+        <span>Cross-Border Retail JV Architecture &amp; Dynamic Model</span>
+        <span class="proj-role">Solutions Consultant</span>
+      </div>
+      <div class="proj-tech">Decree 09/2018, Omnichannel O2O Engine, Working Capital Runway</div>
+      <div class="proj-desc">Engineered dynamic cross-border joint venture financial application evaluating statutory retail licensing, District 1 store Capex, and Shopee/TikTok Shop omnichannel unit economics. (<strong>Impact:</strong> Enabled multi-variable scenario modeling dynamically recalculating working capital runway and equity IRR.)</div>
+    </div>
+    
+    <div class="project-card">
+      <div class="proj-title">
+        <span>Vietnam HCMC Ocean Freight Intelligence Platform</span>
+        <span class="proj-role">Data Systems Consultant</span>
+      </div>
+      <div class="proj-tech">SCFI Trajectory Engine, Carrier Reliability Matrix, Dynamic Search</div>
+      <div class="proj-desc">Designed strategic intelligence platform evaluating Southern Vietnam's $138.4B export hinterland, carrier schedule reliability, and freight procurement hedging protocols. (<strong>Impact:</strong> Empowered corporate shippers to index long-term ocean contracts against dynamic spot-rate trajectories.)</div>
+    </div>
+    
+  </div>
+
+  <!-- CERTIFICATIONS & EDUCATION -->
+  <div class="two-col-split">
+    <div>
+      <div class="section-title">Education</div>
+      
+      <div class="edu-card">
+        <div class="edu-school">National Dong Hwa University</div>
+        <div class="edu-degree">Bachelor of Business Administration (B.B.A.) in Finance</div>
+        <div class="edu-meta">2005 - 2009 · Major in Quantitative Finance &amp; Banking</div>
+      </div>
+      
+    </div>
+
+    <div>
+      <div class="section-title">Professional Finance &amp; Regulatory Licenses</div>
+      <div class="cert-list">
+        
+        <div class="cert-badge">
+          <span class="cert-name">Financial Derivatives Specialist License</span>
+          <span class="cert-issuer">Securities &amp; Futures Institute (SFI)</span>
+        </div>
+        
+        <div class="cert-badge">
+          <span class="cert-name">Trust Operations &amp; Planning Specialist License</span>
+          <span class="cert-issuer">Taiwan Academy of Banking and Finance (TABF)</span>
+        </div>
+        
+        <div class="cert-badge">
+          <span class="cert-name">Senior Life Insurance &amp; Investment-Linked Products</span>
+          <span class="cert-issuer">Life Insurance Association (LIA)</span>
+        </div>
+        
+        <div class="cert-badge">
+          <span class="cert-name">Property &amp; Casualty Underwriting License</span>
+          <span class="cert-issuer">Non-Life Insurance Association (NLIA)</span>
+        </div>
+        
+        <div class="cert-badge">
+          <span class="cert-name">Securities Senior Representative &amp; Wealth Advisory</span>
+          <span class="cert-issuer">Securities Association</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Eric Liu | Executive Curriculum Vitae</span>
+    <span>Page 2 of 2</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eric Liu — Executive Curriculum Vitae</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --primary: #0f172a;       /* Slate 900 */
+  --primary-light: #1e293b; /* Slate 800 */
+  --accent: #1e3a8a;        /* Executive Deep Navy */
+  --accent-light: #f8fafc;  /* Slate 50 */
+  --accent-border: #cbd5e1; /* Slate 300 */
+  --teal: #0f766e;          /* Deep Teal 700 */
+  --text-main: #1e293b;     /* Slate 800 */
+  --text-muted: #475569;    /* Slate 600 */
+  --text-light: #64748b;    /* Slate 500 */
+  --bg-subtle: #f8fafc;     /* Slate 50 */
+  --border-subtle: #e2e8f0; /* Slate 200 */
+  --border-strong: #cbd5e1; /* Slate 300 */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 8.15pt;
+  line-height: 1.38;
+  color: var(--text-main);
+  background: #ffffff;
+  width: 210mm;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+a:hover {
+  color: #1d4ed8;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 6mm 10mm;
+}
+
+@media print {
+  body {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+  }
+  .page-container {
+    padding: 0 !important;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page-container:last-child {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  .no-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+
+.page-container {
+  width: 100%;
+  min-height: 284mm;
+  padding: 6mm 10mm;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== HEADER ==================== */
+.header-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--primary);
+  margin-bottom: 6px;
+}
+
+.header-info {
+  flex: 1;
+}
+
+.name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.candidate-name {
+  font-size: 19pt;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.2px;
+}
+
+.candidate-title {
+  font-size: 9.2pt;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: 1px;
+}
+
+.contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
+  font-size: 7.8pt;
+  color: var(--text-muted);
+}
+
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==================== SECTION TITLE ==================== */
+.section-title {
+  font-size: 8.6pt;
+  font-weight: 800;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  border-bottom: 1.2px solid var(--primary);
+  padding-bottom: 2px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* ==================== SUMMARY BOX ==================== */
+.summary-box {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--accent);
+  border-radius: 3px;
+  padding: 5px 8px;
+  margin-bottom: 6px;
+}
+
+.summary-list {
+  padding-left: 14px;
+  margin: 0;
+}
+
+.summary-list li {
+  font-size: 7.9pt;
+  line-height: 1.36;
+  color: var(--text-main);
+  margin-bottom: 2.5px;
+}
+.summary-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* ==================== SKILLS GRID ==================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 8px;
+  margin-bottom: 6px;
+}
+
+.skill-category-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: 3px;
+  padding: 4px 6px;
+}
+
+.skill-cat-title {
+  font-size: 7.8pt;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.skill-cat-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.skill-tag {
+  font-size: 7.2pt;
+  color: var(--text-main);
+  background: #ffffff;
+  padding: 1px 4px;
+  border-radius: 2px;
+  border: 1px solid var(--border-subtle);
+}
+
+/* ==================== EXPERIENCE ITEMS ==================== */
+.job-item {
+  margin-bottom: 6px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.job-item:last-child {
+  margin-bottom: 0;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1px;
+}
+
+.job-company {
+  font-size: 9.0pt;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.job-period {
+  font-size: 7.8pt;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.job-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+}
+
+.job-title {
+  font-size: 8.3pt;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.job-location {
+  font-size: 7.5pt;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.job-bullets {
+  list-style: none;
+  padding-left: 0;
+}
+
+.job-bullets li {
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 1.8px;
+  font-size: 7.85pt;
+  line-height: 1.36;
+  color: var(--text-main);
+}
+
+.job-bullets li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 8pt;
+  top: 0px;
+}
+
+/* ==================== PROJECTS GRID ==================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 6px;
+  margin-bottom: 6px;
+}
+
+.project-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: 3px;
+  padding: 4px 6px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.proj-title {
+  font-size: 7.9pt;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.proj-role {
+  font-size: 7.0pt;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.proj-tech {
+  font-size: 6.9pt;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent);
+  margin-top: 1px;
+  margin-bottom: 1.5px;
+}
+
+.proj-desc {
+  font-size: 7.3pt;
+  color: var(--text-muted);
+  line-height: 1.32;
+}
+
+/* ==================== CERTIFICATIONS & EDUCATION ==================== */
+.two-col-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.cert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+}
+
+.cert-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-left: 2.5px solid var(--teal);
+  border-radius: 2px;
+  padding: 2.5px 5px;
+  font-size: 7.3pt;
+}
+
+.cert-name {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.cert-issuer {
+  font-size: 6.9pt;
+  color: var(--text-muted);
+}
+
+.edu-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-left: 2.5px solid var(--accent);
+  border-radius: 2px;
+  padding: 4px 6px;
+}
+
+.edu-school {
+  font-size: 8.0pt;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.edu-degree {
+  font-size: 7.5pt;
+  color: var(--accent);
+  margin-top: 0.5px;
+}
+
+.edu-meta {
+  font-size: 7.0pt;
+  color: var(--text-muted);
+  margin-top: 0.5px;
+}
+
+/* ==================== PAGE 2 MINI HEADER ==================== */
+.p2-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid var(--border-strong);
+  margin-bottom: 6px;
+  font-size: 7.6pt;
+  color: var(--text-muted);
+}
+
+.p2-header-name {
+  font-size: 8.6pt;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* FOOTER */
+.page-footer {
+  margin-top: auto;
+  padding-top: 3px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  font-size: 6.8pt;
+  color: var(--text-light);
+}
+</style>
+</head>
+<body>
+
+<!-- ==========================================
+     PAGE 1: Profile, Summary, Core Skills, Experience Part 1
+========================================== -->
+<div class="page-container">
+  
+  <!-- HEADER -->
+  <div class="header-card">
+    <div class="header-info">
+      <div class="name-row">
+        <span class="candidate-name">Eric Liu</span>
+      </div>
+      <div class="candidate-title">Director of Global Operations &amp; Cross-Border Supply Chain (VP / Fractional COO)</div>
+      
+      <div class="contact-bar">
+        <span class="contact-item">📍 Taipei, Taiwan ⇄ Ho Chi Minh City, Vietnam (Global Remote / Async)</span>
+        <span class="contact-item">📧 jiacyu@gmail.com</span>
+        <span class="contact-item">📱 +886-916-100-757</span>
+        <span class="contact-item">🌐 <a href="https://jcbluenose131.github.io/institutional-decision-models/" target="_blank">Decision Systems Portfolio ↗</a></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section-title">Executive Summary</div>
+  <div class="summary-box">
+    <ol class="summary-list">
+      
+      <li><strong>Cross-Border Operational Leadership & P&amp;L Ownership:</strong> Over 12 years of executive operations experience across Taiwan and Southeast Asia. Former Marketing Director for Vietnam's largest silicone manufacturer Tech-Link (1,300 headcount across 9 factories in China and Vietnam) and General Manager of its automation subsidiary Locus, directing a 34-person multinational workforce to profitability within 6 months.</li>
+      
+      <li><strong>D2C Brand Scale & Channel Commercialization:</strong> Scaled fashion brand CEREALOUTFIT to NT$ 52M annual turnover and 164,000 organic social followers; established the brand's foreign-invested subsidiary in Vietnam, securing defense ministry retail licensing approvals and establishing a 15,000 MAU regional logistics and e-commerce backbone.</li>
+      
+      <li><strong>Tier-1 B2B Channel & Supply Chain Integration:</strong> Built nationwide distribution channels from zero for 4 international enterprise brands (Fibaro, Wulian, HP Enterprise + Aruba, Synnex). Closed multi-year distribution agreements with Vietnam's top 3 retail chains (Thegioididong, Cho Lon, Thien Hoa) and top 3 industrial LED manufacturers.</li>
+      
+      <li><strong>Data Infrastructure & Automated Reporting:</strong> Engineered commercial data pipelines utilizing Python, SQL, and Tableau, slashing SQL query execution times by 60% (from 45 minutes down to 18 minutes) and deploying automated cross-border inventory and cash-flow monitoring systems.</li>
+      
+      <li><strong>Async Operating Culture & Multilingual Delivery:</strong> Highly disciplined asynchronous communicator accustomed to multi-timezone distributed teams. Fluent in English and Mandarin with practical commercial Vietnamese.</li>
+      
+    </ol>
+  </div>
+
+  <!-- CORE SKILLS -->
+  <div class="section-title">Core Competencies &amp; Technical Capabilities</div>
+  <div class="skills-grid">
+    
+    <div class="skill-category-card">
+      <div class="skill-cat-title">Executive Operations &amp; P&amp;L Leadership</div>
+      <div class="skill-tags">
+        
+        <span class="skill-tag">Cross-Border Supply Chain</span>
+        
+        <span class="skill-tag">34-Person Multinational Team</span>
+        
+        <span class="skill-tag">P&amp;L Management</span>
+        
+        <span class="skill-tag">Vendor &amp; Distributor Contracts</span>
+        
+        <span class="skill-tag">B2B Channel Strategy</span>
+        
+        <span class="skill-tag">Crisis Containment</span>
+        
+      </div>
+    </div>
+    
+    <div class="skill-category-card">
+      <div class="skill-cat-title">Cross-Border Commercial Systems</div>
+      <div class="skill-tags">
+        
+        <span class="skill-tag">Decree 09/2018 Retail Licensing</span>
+        
+        <span class="skill-tag">O2O Omnichannel Fulfillment</span>
+        
+        <span class="skill-tag">15K MAU Logistics Backbone</span>
+        
+        <span class="skill-tag">ERP &amp; Inventory Architecture</span>
+        
+        <span class="skill-tag">Customs &amp; Freight Hedging</span>
+        
+        <span class="skill-tag">B2B Enterprise Sales</span>
+        
+      </div>
+    </div>
+    
+    <div class="skill-category-card">
+      <div class="skill-cat-title">Quantitative Systems &amp; Reporting</div>
+      <div class="skill-tags">
+        
+        <span class="skill-tag">SQL Query Optimization (-60%)</span>
+        
+        <span class="skill-tag">Python Data Pipelines</span>
+        
+        <span class="skill-tag">Cash Runway Stress-Testing</span>
+        
+        <span class="skill-tag">Tableau Executive Dashboards</span>
+        
+        <span class="skill-tag">Working Capital Optimization</span>
+        
+        <span class="skill-tag">CAPEX / OPEX Allocation</span>
+        
+      </div>
+    </div>
+    
+    <div class="skill-category-card">
+      <div class="skill-cat-title">Async Execution &amp; Compliance</div>
+      <div class="skill-tags">
+        
+        <span class="skill-tag">Distributed Team Operations</span>
+        
+        <span class="skill-tag">IFRS 16 / SFRS Compliance</span>
+        
+        <span class="skill-tag">Legal Contract Redlining</span>
+        
+        <span class="skill-tag">Async Documentation</span>
+        
+        <span class="skill-tag">Bilingual English / Mandarin</span>
+        
+        <span class="skill-tag">Commercial Vietnamese</span>
+        
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- EXPERIENCE PART 1 -->
+  <div class="section-title">Professional Experience (Part 1: Executive Leadership)</div>
+  
+  
+  <div class="job-item">
+    <div class="job-header">
+      <span class="job-company">CEREALOUTFIT CO., LTD</span>
+      <span class="job-period">2020 - 2024</span>
+    </div>
+    <div class="job-sub">
+      <span class="job-title">Director of Operations &amp; Regional Representative</span>
+      <span class="job-location">Taipei, Taiwan ⇄ Ho Chi Minh City, Vietnam</span>
+    </div>
+    <ul class="job-bullets">
+      
+      <li>Directed end-to-end commercial operations and regional market entry strategy, achieving NT$ 52M annual revenue and growing organic social audience to 164,000 followers.</li>
+      
+      <li>Secured Ministry of National Defense electronic retail operations licensing in Vietnam, incorporating a compliant 100% foreign-owned subsidiary with localized banking and customs clearances.</li>
+      
+      <li>Built 15,000 MAU e-commerce fulfillment infrastructure and bilingual warehouse operations team in Ho Chi Minh City, slashing cross-border order turnaround times by 40%.</li>
+      
+      <li>Architected automated inventory forecasting and daily financial health pipelines using Python and SQL, eliminating stockouts while optimizing working capital cycles.</li>
+      
+    </ul>
+  </div>
+  
+  <div class="job-item">
+    <div class="job-header">
+      <span class="job-company">Locus Automation JSC / Tech-Link Silicones Vietnam</span>
+      <span class="job-period">2019 - 2021</span>
+    </div>
+    <div class="job-sub">
+      <span class="job-title">General Manager &amp; Group Marketing Director</span>
+      <span class="job-location">Ho Chi Minh City, Vietnam</span>
+    </div>
+    <ul class="job-bullets">
+      
+      <li>Directly supervised 34 cross-functional managers and engineers at Bitexco Financial Tower across ERP, sales operations, client success, and supply chain logistics for a 1,300-headcount manufacturing group.</li>
+      
+      <li>Restructured corporate overhead and go-to-market channels, transforming subsidiary operations from negative to net positive operating cash flow within 6 months of appointment.</li>
+      
+      <li>Negotiated and closed commercial distribution partnerships with Vietnam's top 3 electronics retail chains (Thegioididong, Dien May Cho Lon, Thien Hoa) and top 3 commercial LED display suppliers.</li>
+      
+      <li>Re-engineered production scheduling and cross-border logistics databases, accelerating multi-factory SQL reporting speeds by 60% (from 45 minutes to 18 minutes).</li>
+      
+      <li>Navigated 2020 global supply chain shocks by dynamically hedging raw material procurement, achieving 2x YoY revenue and corporate client expansion despite regional lockdowns.</li>
+      
+    </ul>
+  </div>
+  
+
+  <div class="page-footer">
+    <span>Eric Liu | Executive Curriculum Vitae</span>
+    <span>Page 1 of 2</span>
+  </div>
+</div>
+
+<!-- ==========================================
+     PAGE 2: Experience Part 2, Systems & Models, Education, Certifications
+========================================== -->
+<div class="page-container page-break">
+
+  <!-- MINI HEADER -->
+  <div class="p2-header-bar">
+    <span class="p2-header-name">Eric Liu | Key Systems &amp; Career History</span>
+    <span>jiacyu@gmail.com | +886-916-100-757 | <a href="https://jcbluenose131.github.io/institutional-decision-models/" target="_blank">Portfolio Demo ↗</a></span>
+  </div>
+
+  <!-- EXPERIENCE PART 2 -->
+  <div class="section-title">Professional Experience (Part 2: Commercial Distribution &amp; Banking)</div>
+  
+  
+  <div class="job-item">
+    <div class="job-header">
+      <span class="job-company">Free Link System / Wake N&#39; Bake</span>
+      <span class="job-period">2015 - 2020</span>
+    </div>
+    <div class="job-sub">
+      <span class="job-title">Founder &amp; Managing Director</span>
+      <span class="job-location">Taipei, Taiwan</span>
+    </div>
+    <ul class="job-bullets">
+      
+      <li>Established premier IoT building automation and commercial distribution company. <a href="http://www.taiseia.org.tw/Industry/industry_more?id=67" target="_blank" style="color:#1e3a8a; font-weight:600;">Featured in 經濟日報 (Economic Daily News) ↗</a> for landmark smart building channel innovations.</li>
+      
+      <li>Secured official Taiwan master distribution rights for Fibaro (Poland) and Wulian (China), while distributing HP Enterprise/Aruba and Synnex networking hardware through PChome and 3C retail chains.</li>
+      
+      <li>Constructed multi-tier B2B partner ecosystem across Tier-1 property developers (specifying pre-wired automation packages), architectural design firms, and certified installation engineering teams.</li>
+      
+      <li>Founded and operated Wake N' Bake hospitality venue in Taipei City Hall district, scaling to 20,000+ social followers and executing a profitable equity buyout prior to global headwinds.</li>
+      
+    </ul>
+  </div>
+  
+  <div class="job-item">
+    <div class="job-header">
+      <span class="job-company">Citi Bank NA &amp; Bank SinoPac</span>
+      <span class="job-period">2011 - 2015</span>
+    </div>
+    <div class="job-sub">
+      <span class="job-title">Assistant Vice President / Junior Manager — Wealth Management &amp; SME Banking</span>
+      <span class="job-location">Taipei, Taiwan</span>
+    </div>
+    <ul class="job-bullets">
+      
+      <li>Managed CitiGold high-net-worth client portfolios and SME commercial lending facilities, structuring OBU offshore financing, foreign exchange hedging, and treasury cash management solutions.</li>
+      
+      <li>Evaluated balance sheets, debt service coverage ratios (DSCR), and trade finance letters of credit (L/C) across manufacturing and import/export enterprises.</li>
+      
+      <li>Consistently recognized in Citi Bank's top quarterly asset acquisition honor roll, enforcing institutional risk-management protocols and statutory AML/KYC standards.</li>
+      
+    </ul>
+  </div>
+  
+
+  <!-- FLAGSHIP PROJECTS -->
+  <div class="section-title">Flagship Quantitative &amp; Enterprise Decision Systems</div>
+  <div class="projects-grid">
+    
+    <div class="project-card">
+      <div class="proj-title">
+        <span>Cross-Border Retail JV Architecture &amp; Dynamic Model</span>
+        <span class="proj-role">Lead Architect</span>
+      </div>
+      <div class="proj-tech">JavaScript, Chart.js, Decree 09/2018, Working Capital Engine</div>
+      <div class="proj-desc">Engineered client-side dynamic decision application evaluating Decree 09/2018 retail licensing, District 1 flagship Capex, omnichannel unit economics, and 24 parametric sensitivity sliders. (<strong>Impact:</strong> Accurately forecast cash-runway break-even and IRR under aggressive and conservative working capital scenarios.)</div>
+    </div>
+    
+    <div class="project-card">
+      <div class="proj-title">
+        <span>Vietnam HCMC &amp; Cai Mep Ocean Freight Macro Analysis</span>
+        <span class="proj-role">Principal Consultant</span>
+      </div>
+      <div class="proj-tech">SCFI Forecast Engine, Terminal Topology, Dynamic Filter</div>
+      <div class="proj-desc">Comprehensive supply chain intelligence analyzing Southern Vietnam's $138.4B export hinterland, carrier schedule reliability across Evergreen/Yang Ming/WHL, and CIF procurement hedging. (<strong>Impact:</strong> Identified $420/FEU freight variance windows across 20 export commodities.)</div>
+    </div>
+    
+    <div class="project-card">
+      <div class="proj-title">
+        <span>Greater Taipei Pet Hospitality JV Feasibility Engine</span>
+        <span class="proj-role">Systems Architect</span>
+      </div>
+      <div class="proj-tech">Single-Page App, 34 Tables, 12 Sliders, Acoustic Dampening</div>
+      <div class="proj-desc">Full-stack institutional feasibility application with 34 dense operational tables, 15-minute dual-ring shuttle route modeling, and real-time Capex/Opex sensitivity calculations. (<strong>Impact:</strong> Eliminated board ambiguity on acoustic engineering Capex and payback horizons.)</div>
+    </div>
+    
+    <div class="project-card">
+      <div class="proj-title">
+        <span>Singapore HoldCo USD 2.85M FX Treasury Carry Engine</span>
+        <span class="proj-role">Quantitative Systems Architect</span>
+      </div>
+      <div class="proj-tech">MAS S$NEER Band, SOFR/SORA, SFRS(I) 1-21, IRAS 17%</div>
+      <div class="proj-desc">Reactive institutional decision application stress-testing MAS currency band slope shifts, CIRP forward premiums, and corporate tax-shield asymmetries. (<strong>Impact:</strong> Delivered dynamic break-even thresholds and CFO execution protocols.)</div>
+    </div>
+    
+  </div>
+
+  <!-- CERTIFICATIONS & EDUCATION -->
+  <div class="two-col-split">
+    <div>
+      <div class="section-title">Education</div>
+      
+      <div class="edu-card">
+        <div class="edu-school">National Dong Hwa University</div>
+        <div class="edu-degree">Bachelor of Business Administration (B.B.A.) in Finance</div>
+        <div class="edu-meta">2005 - 2009 · Major in Quantitative Finance &amp; Banking</div>
+      </div>
+      
+    </div>
+
+    <div>
+      <div class="section-title">Professional Finance &amp; Regulatory Licenses</div>
+      <div class="cert-list">
+        
+        <div class="cert-badge">
+          <span class="cert-name">Financial Derivatives Specialist License</span>
+          <span class="cert-issuer">Securities &amp; Futures Institute (SFI)</span>
+        </div>
+        
+        <div class="cert-badge">
+          <span class="cert-name">Trust Operations &amp; Planning Specialist License</span>
+          <span class="cert-issuer">Taiwan Academy of Banking and Finance (TABF)</span>
+        </div>
+        
+        <div class="cert-badge">
+          <span class="cert-name">Senior Life Insurance &amp; Investment-Linked Products</span>
+          <span class="cert-issuer">Life Insurance Association (LIA)</span>
+        </div>
+        
+        <div class="cert-badge">
+          <span class="cert-name">Property &amp; Casualty Underwriting License</span>
+          <span class="cert-issuer">Non-Life Insurance Association (NLIA)</span>
+        </div>
+        
+        <div class="cert-badge">
+          <span class="cert-name">Securities Senior Representative &amp; Wealth Advisory</span>
+          <span class="cert-issuer">Securities Association</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Eric Liu | Executive Curriculum Vitae</span>
+    <span>Page 2 of 2</span>
+  </div>
+</div>
+
+</body>
+</html>
